@@ -1,8 +1,5 @@
 % ===========================================================================
 %  rede_social.pl — Base de Conhecimento Relacional
-%  Projeto: Análise de Risco de Crédito Híbrido em Redes Sociais
-%  Disciplina: ICC260 — IA: Da Lógica aos Números (SRL & Python)
-%  Prof. Edjard Mota
 % ===========================================================================
 
 :- use_module(library(lists)).
