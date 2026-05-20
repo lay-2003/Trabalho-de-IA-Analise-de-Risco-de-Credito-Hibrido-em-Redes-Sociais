@@ -73,3 +73,48 @@ O paradigma SRL oferece três propriedades desejáveis para sistemas de crédito
 1. **Explicabilidade:** a lógica de primeiro grau expressa *por que* uma conclusão foi atingida, não apenas *qual* é o resultado.
 2. **Auditabilidade:** a base Prolog é um documento formal, legível e versionável — diferente de pesos de redes neurais.
 3. **Modularidade:** regras lógicas e pesos estatísticos evoluem independentemente. Uma nova regulação pode mudar uma regra Prolog sem retreinar o modelo inteiro.
+
+## 5. Como Executar
+
+**Pré-requisitos:** Python 3.8+, SWI-Prolog instalado.
+
+### Passo 1 — Organizar os Arquivos
+
+Crie uma pasta e coloque os quatro arquivos entregues dentro dela:
+
+```
+projeto_srl/
+├── pipeline_srl.py        ← script principal Python
+├── rede_social.pl         ← base de conhecimento Prolog
+├── dados_financeiros.csv  ← dataset de clientes
+└── analise_xai.md         ← análise crítica (leitura)
+```
+
+---
+
+### Passo 2 — Instalar as dependências
+
+```bash
+pip install pyswip pandas scikit-learn tabulate
+```
+
+> Se aparecer erro `SWI-Prolog not found`, defina a variável de ambiente:
+> - Windows: `set SWI_HOME_DIR=C:\Program Files\swipl`
+> - Mac/Linux: `export SWI_HOME_DIR=/usr/lib/swi-prolog`
+
+### Passo 3 — Executar
+
+```bash
+python pipeline_srl.py
+```
+
+O script imprime o dataset enriquecido, a acurácia do modelo, os coeficientes XAI e as regras ProbLog geradas. Um arquivo `regras_problog_geradas.pl` é salvo automaticamente na pasta.
+
+Para explorar a base Prolog isoladamente:
+
+```bash
+swipl rede_social.pl
+?- grau_minimo_risco(joao, G).
+?- perfil_risco(X, Perfil).
+?- halt.
+```
