@@ -1,9 +1,6 @@
 """
 ===========================================================================
  pipeline_srl.py — Pipeline SRL Híbrido: Prolog + Python/Scikit-Learn
- Projeto: Análise de Risco de Crédito Híbrido em Redes Sociais
- Disciplina: ICC260 — IA: Da Lógica aos Números (SRL & Python)
- Prof. Edjard Mota
 ===========================================================================
 
 Arquitetura:
